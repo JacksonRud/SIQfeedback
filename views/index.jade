@@ -1,0 +1,45 @@
+
+h1 We have some dope quesions
+ 
+script.
+	var something = function(x) {
+		window.alert(x);
+	}
+
+mixin scale
+	button(onclick='something(1)') 1
+	button(onclick='something(2)') 2
+	button(onclick='something(3)') 3
+	button(onclick='something(4)') 4
+	button(onclick='something(5)') 5  
+
+mixin text
+	First  
+		input#myText(type='text', value='Response')
+	
+		button(onclick='myFunction()') Reply
+		p#demo
+		script.
+			function myFunction() {
+			var x = document.getElementById("myText").value;
+			something(x)
+			}
+
+
+
+
+
+each index in ql  
+	p= index.question
+	if index.type == "scale"
+		+scale
+
+	if index.type == "text"
+		+text
+
+	
+	
+
+
+
+
