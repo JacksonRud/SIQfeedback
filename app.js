@@ -7,10 +7,10 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest');
+var db = monk('localhost:27017/SIQfeedback');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var database = require('./routes/database');
 
 var app = express();
 
@@ -33,7 +33,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/database', database);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

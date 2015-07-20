@@ -1,41 +1,57 @@
+extends layout
 
-h1 We have some dope quesions
- 
-script.
-	var something = function(x) {
-		window.alert(x);
-	}
+block content
+	h1 We have some dope quesions
+		
 
-mixin scale
-	button(onclick='something(1)') 1
-	button(onclick='something(2)') 2
-	button(onclick='something(3)') 3
-	button(onclick='something(4)') 4
-	button(onclick='something(5)') 5  
+	script.
+		function datasend( x, y) {
+			var newUser = {
+				'question': x ,
+				'answer': y
+				}
 
-mixin text
-	First  
-		input#myText(type='text', value='Response')
-	
-		button(onclick='myFunction()') Reply
-		p#demo
-		script.
-			function myFunction() {
-			var x = document.getElementById("myText").value;
-			something(x)
-			}
+			$.ajax({
+				type: 'POST',
+				data: newUser,
+				url: '/database/sendfeedback',
+				dataType: 'JSON'
+				});
+		}
+
+	mixin scale(q)
+		p= q
+		button(onclick='datasend( q , 1)') 1
+		button(onclick='datasend(\"" + q + "\" , 2)') 2
+		button(onclick='datasend(\"" + q + "\" , 3)') 3
+		button(onclick='datasend(\"" + q + "\" , 4)') 4
+		button(onclick='datasend(\"" + q + "\" , 5)') 5  
+
+	mixin text(q)
+		First  
+			p= q
+			input#myText(type='text', value='Response')
+		
+			button(onclick='myFunction(q)') Reply
+			p#demo
+			script.
+				function myFunction(q) {
+					var x = document.getElementById("myText").value;
+					datasend(q , x)
+				}
 
 
 
 
+	each index in ql  
+		if index.type == "scale"
+			+scale(index.question)
 
-each index in ql  
-	p= index.question
-	if index.type == "scale"
-		+scale
+		if index.type == "text"
+			+text(index.question)
 
-	if index.type == "text"
-		+text
+
+
 
 	
 	
