@@ -6,33 +6,39 @@ block content
 
 	mixin scale(q)
 		p= q
-
-		label(for="btn5")
-			#radio5(class="radiodiv")
-				input#btn5(type="radio" name= q)
-				span(class="bgcircle")
-			img#img5(class="btnimg" src="/images/btn5.svg") 
-		label(for="btn4")
-			#radio4(class="radiodiv")
-				input#btn4(type="radio" name= q)
-				span(class="bgcircle")
-			img#img4(class="btnimg" src="/images/btn4.svg")
-		label(for="btn3")
-			#radio3(class="radiodiv")
-				input#btn3(type="radio" name= q)
-				span(class="bgcircle")
-			img#img3(class="btnimg" src="/images/btn3.svg")
-		label(for="btn2")
-			#radio2(class="radiodiv")
-				input#btn2(type="radio" name= q)
-				span(class="bgcircle")
-			img#img2(class="btnimg" src="/images/btn2.svg") 
-		label(for="btn1")
-			#radio1(class="radiodiv")
-				input#btn1(type="radio" name= q)
-				span(class="bgcircle")
-			img#img1(class="btnimg" src="/images/btn1.svg")
-		
+		table(style="width:100%")
+			tr
+				td
+					label(for="btn5")
+						#radio5(class="radiodiv")
+							input#btn5(type="radio" name= q)
+							span(class="bgcircle")
+							img#img5(class="btnimg" src="/images/btn5.svg") 
+				td
+					label(for="btn4")					
+						#radio4(class="radiodiv")
+							input#btn4(type="radio" name= q)
+							span(class="bgcircle")
+							img#img4(class="btnimg" src="/images/btn4.svg")
+				td
+					label(for="btn3")
+						#radio3(class="radiodiv")
+							input#btn3(type="radio" name= q)
+							span(class="bgcircle")
+							img#img3(class="btnimg" src="/images/btn3.svg")
+				td
+					label(for="btn2")
+						#radio2(class="radiodiv")
+							input#btn2(type="radio" name= q)
+							span(class="bgcircle")
+							img#img2(class="btnimg" src="/images/btn2.svg") 
+				td
+					label(for="btn1")
+						#radio1(class="radiodiv")
+							input#btn1(type="radio" name= q)
+							span(class="bgcircle")
+							img#img1(class="btnimg" src="/images/btn1.svg")
+				
 
 		
 

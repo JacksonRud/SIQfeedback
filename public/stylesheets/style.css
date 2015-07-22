@@ -1,45 +1,56 @@
+body{
+	background-image:url("/images/xp-temp-logo-4.png");
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+
 input {
     border: 0;
     background: transparent;
 }
 input[type="radio"] {
 	display: none;
-
 }
 img.btnimg {
-	z-index:1;
-	width:25px;
-	height:25px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	display:block;
+	z-index:50;
+	width:40px;
+	height:40px; 
 	background-color:rgba(0,0,0,0);
 	vertical-align:middle;
 }
 
-img#img3 {
-	/*padding:25px;*/
-	width:27px;
-	height:27px;
-}
 
+td{
+	vertical-align:middle;
+	text-align:center;
+}
 
 
 span.bgcircle {
-	display:inline-block;
-	width:39px;
-	height:39px;
+	position:absolute;
+	top:2.5px;
+	left:2.5px;
+	display:block;
+	width:55px;
+	height:55px;
 	border-radius:  50%;
 	background-color:#FFCCFF;
-	transition:background-color .7	s linear;
+	transition:background-color .5	s linear;
 }
 
 input[type="radio"]:checked + span {
-     background-color:#FF0099;
-	transition:background-color .7s linear;
+    background-color:#FF0099;
+	transition:background-color .5s linear;
 }
 
 div.radiodiv {
-	z-index:-1;
-	display: inline-block;
 	position:relative;
-	left:32px;
-	top:13px;
+	z-index:49;
+	display: inline-block;
 }
