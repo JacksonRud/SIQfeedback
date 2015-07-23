@@ -3,15 +3,13 @@ extends layout
 block style
 	link(rel='stylesheet' href='/stylesheets/form-style.css')
 
-
 block content
 	p Please answer these questions:
 
 	mixin heartSVG
-		svg#haaaaart
+		svg#hrt
 			path(stroke-miterlimit='4', d='m 263.4 234.1 c -66.2 0 -120 53.8 -120 120 0 134.8 135.9 170.1 228.6 303.3 87.6 -132.4 228.6 -172.9 228.6 -303.3 0 -66.2 -53.8 -120 -120 -120 -48 0 -89.4 28.4 -108.6 69.2 -19.2 -40.8 -60.5 -69.2 -108.6 -69.2 z')
 
-	+heartSVG
 
 	mixin scale-faces(q)
 		div(class="scale")
@@ -49,83 +47,77 @@ block content
 								span(class="bgcircle")
 								img#img1(class="btnimg" src="/images/btn1.svg")
 				
+	mixin scale-stars(q)
+		div(class="scale")
+			p= q
+			table
+				tr
+					td
+						label(for="star5")
+							#radio5(class="radiodiv")
+								input#star5(type="radio" name= q)
+								span(class="bgcircle")
+								img#img5(class="btnimg" src="/images/star2.png") 
+					td
+						label(for="star4")
+							#radio4(class="radiodiv")
+								input#star4(type="radio" name= q)
+								span(class="bgcircle")
+								img#img4(class="btnimg" src="/images/star2.png") 	
+					td
+						label(for="star3")
+							#radio3(class="radiodiv")
+								input#star3(type="radio" name= q)
+								span(class="bgcircle")
+								img#img3(class="btnimg" src="/images/star2.png")
+					td
+						label(for="star2")
+							#radio2(class="radiodiv")
+								input#star2(type="radio" name= q)
+								span(class="bgcircle")
+								img#img2(class="btnimg" src="/images/star2.png") 
+					td
+						label(for="star1")
+							#radio1(class="radiodiv")
+								input#star1(type="radio" name= q)
+								span(class="bgcircle")
+								img#img1(class="btnimg" src="/images/star2.png") 	
 
-		mixin scale-stars(q)
-			div(class="scale")
-				p= q
-				table
-					tr
-						td
-							label(for="star5")
-								#radio5(class="radiodiv")
-									input#star5(type="radio" name= q)
-									span(class="bgcircle")
-									img#img5(class="btnimg" src="/images/star2.png") 
-						td
-							label(for="star4")
-								#radio4(class="radiodiv")
-									input#star4(type="radio" name= q)
-									span(class="bgcircle")
-									img#img4(class="btnimg" src="/images/star2.png") 	
-						td
-							label(for="star3")
-								#radio3(class="radiodiv")
-									input#star3(type="radio" name= q)
-									span(class="bgcircle")
-									img#img3(class="btnimg" src="/images/star2.png")
-						td
-							label(for="star2")
-								#radio2(class="radiodiv")
-									input#star2(type="radio" name= q)
-									span(class="bgcircle")
-									img#img2(class="btnimg" src="/images/star2.png") 
-						td
-							label(for="star1")
-								#radio1(class="radiodiv")
-									input#star1(type="radio" name= q)
-									span(class="bgcircle")
-									img#img1(class="btnimg" src="/images/star2.png") 	
-		mixin scale-hearts(q)
-			div(class="scale")
-				p= q
-				table
-					tr
-						td
-							label(for="hrt5")
-								#radio5(class="radiodiv")
-									input#hrt5(type="radio" name= q)
-									span(class="bgcircle")
-									img#hrt5(class="btnimg heart" src="/images/hrt.svg") 
-						td
-							label(for="hrt4")
-								#radio4(class="radiodiv")
-									input#hrt4(type="radio" name= q)
-									span(class="bgcircle")
-									img#img4(class="btnimg heart" src="/images/hrt.svg") 	
-						td
-							label(for="hrt3")
-								#radio3(class="radiodiv")
-									input#hrt3(type="radio" name= q)
-									span(class="bgcircle")
-									img#img3(class="btnimg heart" src="/images/hrt.svg")
-						td
-							label(for="hrt2")
-								#radio2(class="radiodiv")
-									input#hrt2(type="radio" name= q)
-									span(class="bgcircle")
-									img#img2(class="btnimg heart" src="/images/hrt.svg") 
-						td
-							label(for="hrt1")
-								#radio1(class="radiodiv")
-									input#hrt1(type="radio" name= q)
-									span(class="bgcircle")
-									img#img1(class="btnimg heart" src="/images/hrt.svg") 			
-
-
-		
-
-		
- 
+	mixin scale-hearts(q)
+		div(class="scale")
+			p= q
+			table
+				tr
+					td
+						label(for="hrt5")
+							#radio5(class="radiodiv")
+								input#hrt5(type="radio" name= q)
+								+heartSVG
+								img#hrt5(class="btnimg heart" src="/images/hrt.svg") 
+					td
+						label(for="hrt4")
+							#radio4(class="radiodiv")
+								input#hrt4(type="radio" name= q)
+								+heartSVG
+								img#img4(class="btnimg heart" src="/images/hrt.svg") 	
+					td
+						label(for="hrt3")
+							#radio3(class="radiodiv")
+								input#hrt3(type="radio" name= q)
+								+heartSVG
+								img#img3(class="btnimg heart" src="/images/hrt.svg")
+					td
+						label(for="hrt2")
+							#radio2(class="radiodiv")
+								input#hrt2(type="radio" name= q)
+								+heartSVG
+								img#img2(class="btnimg heart" src="/images/hrt.svg") 
+					td
+						label(for="hrt1")
+							#radio1(class="radiodiv")
+								input#hrt1(type="radio" name= q)
+								+heartSVG
+								img#img1(class="btnimg heart" src="/images/hrt.svg") 			
 
 	mixin text(q)
 		div(class="text")
