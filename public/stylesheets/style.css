@@ -1,5 +1,5 @@
 body{
-	background-color:#000000;
+	background-color:#555555;
 	/*
 	background-image:url("/images/xp-temp-logo-4.png");
 	background-attachment:fixed;
@@ -17,7 +17,7 @@ p{
 
 input {
     border: 0;
-    background: transparent;
+    /background: transparent;
 	}
 input[type="radio"] {
 	display: none;
