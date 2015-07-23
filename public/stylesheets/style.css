@@ -11,7 +11,7 @@ input {
     background: transparent;
 }
 input[type="radio"] {
-	display: none;
+	display: block;
 }
 img.btnimg {
 	position:absolute;
@@ -54,3 +54,22 @@ div.radiodiv {
 	z-index:49;
 	display: inline-block;
 }
+
+div.radiodivv {
+	position:relative;
+	z-index:49;
+	display: block;
+}
+img.starimg {
+	position:absolute;
+	top:90px;
+	left:90px;
+	display:block;
+	z-index:50;
+	width:60px;
+	height:60px; 
+	background-color:rgba(0,0,0,0);
+	vertical-align:middle;
+}
+
+
