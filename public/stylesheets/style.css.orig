@@ -10,18 +10,21 @@ body{
 p{
 	color: #E46C0A;
 	font-size:100px;
-	/*font-family:"sans serif";*/
+	font-family:"sans serif";
 	text-align:center;
 }
-
-
 input {
     border: 0;
     background: transparent;
 	}
 input[type="radio"] {
+<<<<<<< HEAD
 	display: none;
 	}
+=======
+	display: block;
+}
+>>>>>>> a74ef380ba67a2a0d52d71c371dbd517c46dd85c
 img.btnimg {
 	position:absolute;
 /*	top:15px;*/
@@ -62,4 +65,27 @@ div.radiodiv {
 	position:relative;
 	z-index:49;
 	display: inline-block;
+<<<<<<< HEAD
 	}
+=======
+}
+
+div.radiodivv {
+	position:relative;
+	z-index:49;
+	display: block;
+}
+img.starimg {
+	position:absolute;
+	top:90px;
+	left:90px;
+	display:block;
+	z-index:50;
+	width:60px;
+	height:60px; 
+	background-color:rgba(0,0,0,0);
+	vertical-align:middle;
+}
+
+
+>>>>>>> a74ef380ba67a2a0d52d71c371dbd517c46dd85c

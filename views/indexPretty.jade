@@ -2,8 +2,9 @@ extends layout
 
 block content
 	p Please answer these questions:
+	a(href="/") go to the lame guys page
 
-	mixin scale(q)
+	mixin scale-faces(q)
 		div(class="scale")
 			p= q
 			table
@@ -40,33 +41,36 @@ block content
 								img#img1(class="btnimg" src="/images/btn1.svg")
 				
 
-		table(style="width:100%")
-			tr
-				td
-					label(for="star5")
-						#radio5(class="radiodivv")
-							input#star5(type="radio" name= q)
-							img#img5(class="starimg" src="/images/star.png") 
-				td
-					label(for="star4")
-						#radio4(class="radiodivv")
-							input#star4(type="radio" name= q)
-							img#img4(class="starimg" src="/images/star.png") 	
-				td
-					label(for="star3")
-						#radio3(class="radiodivv")
-							input#star3(type="radio" name= q)
-							img#img3(class="starimg" src="/images/star.png")
-				td
-					label(for="star2")
-						#radio2(class="radiodivv")
-							input#star2(type="radio" name= q)
-							img#img2(class="starimg" src="/images/star.png") 
-				td
-					label(for="star1")
-						#radio1(class="radiodivv")
-							input#star1(type="radio" name= q)
-							img#img1(class="starimg" src="/images/star.png") 			
+		mixin scale-stars(q)
+			div(class="scale")
+				p= q
+				table
+					tr
+						td
+							label(for="star5")
+								#radio5(class="radiodiv")
+									input#star5(type="radio" name= q)
+									img#img5(class="btnimg" src="/images/star.png") 
+						td
+							label(for="star4")
+								#radio4(class="radiodiv")
+									input#star4(type="radio" name= q)
+									img#img4(class="btnimg" src="/images/star.png") 	
+						td
+							label(for="star3")
+								#radio3(class="radiodiv")
+									input#star3(type="radio" name= q)
+									img#img3(class="btnimg" src="/images/star.png")
+						td
+							label(for="star2")
+								#radio2(class="radiodiv")
+									input#star2(type="radio" name= q)
+									img#img2(class="btnimg" src="/images/star.png") 
+						td
+							label(for="star1")
+								#radio1(class="radiodiv")
+									input#star1(type="radio" name= q)
+									img#img1(class="btnimg" src="/images/star.png") 			
 
 		
 
@@ -80,7 +84,8 @@ block content
 
 	each index in ql  
 		if index.type == "scale"
-			+scale(index.question)
+			+scale-faces(index.question)
+			+scale-stars(index.question)
 
 		if index.type == "text"
 			+text(index.question)
