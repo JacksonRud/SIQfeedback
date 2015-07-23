@@ -10,7 +10,9 @@ var questionlist =  [
 
 /* GET home page. */
 var questionlist =  [
-	{"question": "on a scale of whatever", "type": "scale",},
+	{"question": "Vibhu??", "type": "scale-faces",},
+	{"question": "Are you confused", "type": "scale-stars",},
+	{"question": "Do you love me", "type": "scale-hearts",},
 	{"question": "tell me your life story", "type": "text"},
 	{"question": "how isnt it quite", "type": "text"}
 	]
