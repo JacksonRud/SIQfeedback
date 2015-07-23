@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	h1 We have some dope quesions
+	h1 I just some attention, please answer my questions, please...
 		
 
 	script.
@@ -19,43 +19,42 @@ block content
 				});
 		}
 
+		function myFunction(q) {
+					var x = document.getElementById("myText").value;
+					datasend(m  , x);
+				}
+
+
 	mixin scale(q)
 		p= q
-		button(onclick='datasend( q , 1)') 1
-		button(onclick='datasend(\"" + q + "\" , 2)') 2
-		button(onclick='datasend(\"" + q + "\" , 3)') 3
-		button(onclick='datasend(\"" + q + "\" , 4)') 4
-		button(onclick='datasend(\"" + q + "\" , 5)') 5  
+		button(onclick='datasend( m , 1 )') 1
+		button(onclick='datasend(m , 2)') 2
+		button(onclick='datasend(m , 3)') 3  
+		button(onclick='datasend(m , 4)') 4
+		button(onclick='datasend(m , 5)') 5  
 
 	mixin text(q)
 		First  
 			p= q
 			input#myText(type='text', value='Response')
-		
-			button(onclick='myFunction(q)') Reply
-			p#demo
-			script.
-				function myFunction(q) {
-					var x = document.getElementById("myText").value;
-					datasend(q , x)
-				}
+			
+			
+			button(onclick='myFunction(m)') Reply
+			
 
 
+
+	script.
 
 
 	each index in ql  
 		if index.type == "scale"
+			script. 
+				var m = JSON.stringify('!{index.question}');
 			+scale(index.question)
 
 		if index.type == "text"
+			script. 
+				var m = JSON.stringify('!{index.question}');
 			+text(index.question)
-
-
-
-
-	
-	
-
-
-
 

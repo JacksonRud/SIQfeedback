@@ -1,58 +1,56 @@
-body {
-  padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+	background-image:url("/images/xp-temp-logo-4.png");
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
 }
 
-h2 {
-	margin:0 0 .5em 0;
-}
 
-a {
-  color: #00B7FF;
+input {
+    border: 0;
+    background: transparent;
 }
-
-#wrapper {
-	padding-left:312px;
-	position:relative;
+input[type="radio"] {
+	display: none;
 }
-
-#userList {
-	margin:0 0 30px 0;
-}
-	#userList table {
-		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
-	}
-		#userList table th {
-			background:#EEE;
-			font-weight:600;
-			padding:10px 20px;
-			text-align:center;
-		}
-		#userList table tbody {
-			padding:0; margin:0;
-			border-collapse:collapse;
-			border-spacing:0px;
-		}
-			#userList table td {
-				background:#FFF;
-				padding:5px 10px;
-				text-align:center;
-			}
-
-#userInfo {
-	width:250px;
+img.btnimg {
 	position:absolute;
-	top:0; left:0;
+	top:10px;
+	left:10px;
+	display:block;
+	z-index:50;
+	width:40px;
+	height:40px; 
+	background-color:rgba(0,0,0,0);
+	vertical-align:middle;
 }
-	#userInfo p {
-		padding:15px;
-		border:1px solid #CCC;
-		background:rgba(80,120,255,0.05);
-	}
 
-fieldset {
-	border:0;
-	padding:0; margin:0;
+
+td{
+	vertical-align:middle;
+	text-align:center;
+}
+
+
+span.bgcircle {
+	position:absolute;
+	top:2.5px;
+	left:2.5px;
+	display:block;
+	width:55px;
+	height:55px;
+	border-radius:  50%;
+	background-color:#FFCCFF;
+	transition:background-color .5	s linear;
+}
+
+input[type="radio"]:checked + span {
+    background-color:#FF0099;
+	transition:background-color .5s linear;
+}
+
+div.radiodiv {
+	position:relative;
+	z-index:49;
+	display: inline-block;
 }
