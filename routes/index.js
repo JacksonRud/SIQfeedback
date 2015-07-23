@@ -1,19 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-var questionlist =  {
-	"a": 
-		{"question": "on a scale of whatever", "type": "scale",},
-	"b":
-		{"question": "tell me your life story", "type": "text"},
-	"c":
-		{"question": "how isnt it quite", "type": "text"}
 
-}
+var questionlist =  [
+	{"question": "how?", "type": "scale", "answer": ""},
+	{"question": "2", "type": "text", "answer": ""},
+	{"question": "3", "type": "text", "answer": ""}
+	]
 
-router.get('/', function(req, res, next) { res.render('index', {ql : questionlist });
+router.get('/', function(req, res, next) { res.render('collectbuttondata', {ql : questionlist });
 });
 
 
 module.exports = router;
+
