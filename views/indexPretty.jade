@@ -1,10 +1,8 @@
 extends layout
 
-block style
-	link(rel='stylesheet' href='/stylesheets/form-style.css')
-
 block content
 	p Please answer these questions:
+	a(href="/") go to the lame guys page
 
 	mixin scale-faces(q)
 		div(class="scale")
@@ -72,7 +70,38 @@ block content
 							label(for="star1")
 								#radio1(class="radiodiv")
 									input#star1(type="radio" name= q)
-									img#img1(class="btnimg" src="/images/star.png") 			
+									img#img1(class="btnimg" src="/images/star.png") 	
+		mixin scale-hearts(q)
+			div(class="scale")
+				p= q
+				table
+					tr
+						td
+							label(for="hrt5")
+								#radio5(class="radiodiv")
+									input#hrt5(type="radio" name= q)
+									img#img5(class="btnimg" src="/images/hrt.svg") 
+						td
+							label(for="hrt4")
+								#radio4(class="radiodiv")
+									input#hrt4(type="radio" name= q)
+									img#img4(class="btnimg" src="/images/hrt.svg") 	
+						td
+							label(for="hrt3")
+								#radio3(class="radiodiv")
+									input#hrt3(type="radio" name= q)
+									img#img3(class="btnimg" src="/images/hrt.svg")
+						td
+							label(for="hrt2")
+								#radio2(class="radiodiv")
+									input#hrt2(type="radio" name= q)
+									img#img2(class="btnimg" src="/images/hrt.svg") 
+						td
+							label(for="hrt1")
+								#radio1(class="radiodiv")
+									input#hrt1(type="radio" name= q)
+									img#img1(class="btnimg" src="/images/hrt.svg") 			
+
 
 		
 
@@ -88,6 +117,7 @@ block content
 		if index.type == "scale"
 			+scale-faces(index.question)
 			+scale-stars(index.question)
+			+scale-hearts(index.question)
 
 		if index.type == "text"
 			+text(index.question)

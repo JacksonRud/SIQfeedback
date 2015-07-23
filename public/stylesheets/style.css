@@ -1,39 +1,65 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2'), url(https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
 body{
-	background-image:url("/images/bokehbg.jpg");
+	background-color:#AAAAAA;
+	/*
+	background-image:url("/images/xp-temp-logo-4.png");
 	background-attachment:fixed;
 	background-position:center;
-	background-size:cover;
+	background-size:cover;*/
 	}
 
 p{
 	color: #E46C0A;
-	font-family:'Roboto';
-	font-weight: 700;
 	font-size:100px;
+	/*font-family:"sans serif";*/
 	text-align:center;
 }
+
+
+input {
+    border: 0;
+    background: transparent;
+	}
+input[type="radio"] {
+	display: block;
+	}
+img.btnimg {
+	position:absolute;
+/*	top:15px;*/
+/*	left:15px;*/
+	display:block;
+	z-index:50;
+	width:120px;
+	height:120px; 
+	background-color:transparent;
+	vertical-align:middle;
+	}
+table{
+	width:100%;
+	}
+.scale, .text{
+	margin-top:500px;
+	}
+td{
+	vertical-align:middle;
+	text-align:center;
+	}
+span.bgcircle {
+	position:absolute;
+	top:-30px;
+	left:-27px;
+	display:block;
+	width:170px;
+	height:170px;
+	border-radius:  50%;
+	background-color:#FFCCFF;
+	transition:background-color .5	s linear;
+	}
+input[type="radio"]:checked + span {
+    background-color:#FF0099;
+	transition:background-color .5s linear;
+	}
+div.radiodiv {
+	position:relative;
+	z-index:49;
+	display: inline-block;
+	}
