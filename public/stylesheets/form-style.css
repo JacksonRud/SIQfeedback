@@ -3,7 +3,7 @@ input[type=text]{
     color: #F6BE2C;
     text-align: center;
     font-family:"Roboto";
-    font-size:100px;
+    font-size:80px;
 	font-weight:700;
     background: transparent;
 	}
@@ -34,15 +34,10 @@ img.btnimg {
 	background-color:transparent;
 	vertical-align:middle;
 	}
-table{
-	width:100%;
-	}
 .scale, .text{
-	margin-top:500px;
-	}
-td{
-	vertical-align:middle;
-	text-align:center;
+	margin-bottom:500px;
+	display: block;
+	width: 100%;
 	}
 span.bgcircle {
 	position:absolute;
@@ -70,10 +65,20 @@ input[type="radio"]:checked + span {
     background-color:#FF0099;
 	transition:background-color .5s linear;
 	}
-div.radiodiv {
+.radiodiv {
+	width: 0px;
+	margin-left:20%;
+	margin-right: 20%%;
+	float:left;
 	position:relative;
 	z-index:49;
-	display: inline-block;
+    border: 1px solid transparent;
+	}
+#radio5{
+		margin-left: 3%;
+	}
+#radio1{
+		margin-right: 5%;
 	}
 svg {
     width:200px;
