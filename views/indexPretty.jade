@@ -4,11 +4,13 @@ block style
 	link(rel='stylesheet' href='/stylesheets/form-style.css')
 
 block content
+	script(src='/javascripts/form-page.js')
+
 	p Please answer these questions:
 
 	mixin heartSVG
-		svg#hrt
-			path(stroke-miterlimit='4', d='m 263.4 234.1 c -66.2 0 -120 53.8 -120 120 0 134.8 135.9 170.1 228.6 303.3 87.6 -132.4 228.6 -172.9 228.6 -303.3 0 -66.2 -53.8 -120 -120 -120 -48 0 -89.4 28.4 -108.6 69.2 -19.2 -40.8 -60.5 -69.2 -108.6 -69.2 z')
+		svg
+			path(d='m47.07145,1.10096c-24.6443,0 -44.67244,20.75463 -44.67244,46.29287c0,52.00231 50.59152,65.62014 85.10099,117.00522c32.61089,-51.07646 85.10097,-66.70031 85.10097,-117.00522c0,-25.53824 -20.02812,-46.29287 -44.67242,-46.29287c-17.86897,0 -33.28096,10.95597 -40.42855,26.69554c-7.14759,-15.73957 -22.52234,-26.69554 -40.42855,-26.69554l0,0z')
 
 
 	mixin scale-faces(q)
@@ -92,37 +94,33 @@ block content
 						label(for="hrt5")
 							#radio5(class="radiodiv")
 								input#hrt5(type="radio" name= q)
-								+heartSVG
-								img#hrt5(class="btnimg heart" src="/images/hrt.svg") 
+								+heartSVG 
 					td
 						label(for="hrt4")
 							#radio4(class="radiodiv")
 								input#hrt4(type="radio" name= q)
-								+heartSVG
-								img#img4(class="btnimg heart" src="/images/hrt.svg") 	
+								+heartSVG 	
 					td
 						label(for="hrt3")
 							#radio3(class="radiodiv")
 								input#hrt3(type="radio" name= q)
 								+heartSVG
-								img#img3(class="btnimg heart" src="/images/hrt.svg")
 					td
 						label(for="hrt2")
 							#radio2(class="radiodiv")
 								input#hrt2(type="radio" name= q)
-								+heartSVG
-								img#img2(class="btnimg heart" src="/images/hrt.svg") 
+								+heartSVG 
 					td
 						label(for="hrt1")
 							#radio1(class="radiodiv")
 								input#hrt1(type="radio" name= q)
-								+heartSVG
-								img#img1(class="btnimg heart" src="/images/hrt.svg") 			
+								+heartSVG			
 
 	mixin text(q)
 		div(class="text")
 			p= q
-			input#myText(type='text', value='Response')
+			#textdiv
+				input#myText(type='text', value='')
 
 	each index in ql  
 		if index.type == "scale-faces"
@@ -135,7 +133,7 @@ block content
 			+text(index.question)
 
 	#submitBtnDiv
-		button#sub Submit
+		img#vibhu(src="images/vbb.png" class="vibhu")
 
 
 

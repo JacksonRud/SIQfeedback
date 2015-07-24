@@ -1,7 +1,27 @@
-input {
+input[type=text]{
     border: 0;
-    /background: transparent;
+    color: #F6BE2C;
+    text-align: center;
+    font-family:"Roboto";
+    font-size:100px;
+	font-weight:700;
+    background: transparent;
 	}
+#textdiv {
+	display:block;
+	margin: 0 auto;
+	text-align: center;
+}
+.vibhu:hover{
+	filter: hue-rotate(85deg);
+}
+#submitBtnDiv{
+	display:block;
+	width: 600px;
+	margin: 0 auto;
+	margin-top:500px;
+	text-align: center;	
+}
 input[type="radio"] {
 	display: none;
 	}
@@ -44,12 +64,15 @@ div.radiodiv {
 	z-index:49;
 	display: inline-block;
 	}
-/*#path7{
-	fill:#b700FF;
-	fill-opacity:0;
-	stroke:#000000;
-	stroke-width:33;
-	stroke-miterlimit:4;
-	stroke-opacity:0.98453603;
-	stroke-dasharray:none;
-}*/
+svg {
+    width:200px;
+    height:200px;
+    fill: #FFCCFF;
+    stroke: black;
+    stroke-width: 5px ;
+    transition: fill .5s linear;
+}
+input[type="radio"]:checked + svg {
+    fill:#FF0099;
+	transition:fill .5s linear;
+	}
