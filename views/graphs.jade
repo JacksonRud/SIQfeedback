@@ -1,0 +1,16 @@
+extends layout
+
+block style
+	link(rel='stylesheet' href='/stylesheets/graphs-style.css')
+
+block content
+	#graphDiv
+		svg
+	p#test hi
+	script.
+		var str = "#{JSON.stringify(num)}".replace(/&quot;/g, "\"");
+		var numbers = JSON.parse(str);
+	script(src='/javascripts/graphs-page.js')
+
+
+

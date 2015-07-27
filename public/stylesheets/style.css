@@ -26,10 +26,10 @@
 }
 
 body{
-	background-image:url("/images/boke-2.jpg");
+	background-image:url("/images/boke-long.jpg");
 	background-attachment:fixed;
 	background-position:center;
-	background-size:cover;
+	background-size: 100% 35%;
 	}
 
 p{

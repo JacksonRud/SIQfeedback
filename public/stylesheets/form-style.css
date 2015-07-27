@@ -36,7 +36,7 @@ img.btnimg {
 	}
 .scale, .text{
 	margin-bottom:500px;
-	display: block;
+	display: inline-block;
 	width: 100%;
 	}
 span.bgcircle {
@@ -68,14 +68,13 @@ input[type="radio"]:checked + span {
 .radiodiv {
 	width: 0px;
 	margin-left:20%;
-	margin-right: 20%%;
 	float:left;
 	position:relative;
 	z-index:49;
     border: 1px solid transparent;
 	}
 #radio5{
-		margin-left: 3%;
+		margin-left: 7%;
 	}
 #radio1{
 		margin-right: 5%;

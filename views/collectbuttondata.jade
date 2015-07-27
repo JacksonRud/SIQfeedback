@@ -8,90 +8,38 @@ block content
 		p= q
 		label(for="btn5")
 			#radio5(class="radiodiv")
-				input#btn5(type="radio" name= q)
+				input#btn5(type="radio" name= q value="5")
 				span(class="bgcircle")
 			img#img5(class="btnimg" src="/images/btn5.svg") 
 		label(for="btn4")
 			#radio4(class="radiodiv")
-				input#btn4(type="radio" name= q)
+				input#btn4(type="radio" name= q value="4")
 				span(class="bgcircle")
 			img#img4(class="btnimg" src="/images/btn4.svg")
 		label(for="btn3")
 			#radio3(class="radiodiv")
-				input#btn3(type="radio" name= q)
+				input#btn3(type="radio" name= q value="3")
 				span(class="bgcircle")
 			img#img3(class="btnimg" src="/images/btn3.svg")
 		label(for="btn2")
 			#radio2(class="radiodiv")
-				input#btn2(type="radio" name= q)
+				input#btn2(type="radio" name= q value="2")
 				span(class="bgcircle")
 			img#img2(class="btnimg" src="/images/btn2.svg") 
 		label(for="btn1")
 			#radio1(class="radiodiv")
-				input#btn1(type="radio" name= q)
+				input#btn1(type="radio" name= q value="1")
 				span(class="bgcircle")
 			img#img1(class="btnimg" src="/images/btn1.svg")
 		
 	
-	
-	each index in ql
-		+scale(index.question)
 
-	button(onclick='reply()') reply
-	button(onclick='testing()') testbutton
+	form#answers
+		each index in ql
+			+scale(index.question)
+		input#submitBtn(type="button" onclick="shitbitch()" value="GO")
 	
 	script(src='/javascripts/indexhelper.js')
-
-	script. 
-		var questions =  questionlist; 
-		
-		function setanswer(x,y){
-			
-			for (var i =0; i< questions.length; i++){
-				
-				if(questions[i].question == x){
-					questions[i].answer = y ;
-					
-				}
-			}
-		}
-		
-		
-
-		function answertox(x){
-			var radios = document.getElementsByName(x);
-			for (var i = 0; i < 3; i++) {
-				var checked = radios[i].checked
-				if (checked==true) {
-					setanswer(x, i +1);
-				}
-			}
-		}
-
-		function testing(x){
-			window.alert(questions[1].answer);
-		}
-	
-		function reply(){
-			
-			for (var i =0 ; i< questions.length; i++) {
-				answertox(questions[i].question);
-				}
-			
-
-
-
-			$.ajax({
-				type: 'POST',
-				data: questions,
-				url: '/database/sendfeedback',
-				dataType: 'JSON'
-				});
-	
-				}
-
-
-
 
 
 
