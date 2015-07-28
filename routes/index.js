@@ -30,6 +30,13 @@ var numbers = [
 	{"t":"fives", "num":4}
 ]
 
+var clList = [
+	{name : "Loving"},
+	{name : "Hating"},
+	{name : "Dying"},
+	{name : "Laughing"}
+]
+
 router.get('/', function(req, res, next) {
 	res.render('collectbuttondata', {ql : questionlist })
 });
@@ -44,7 +51,11 @@ router.get('/pretty', function(req, res, next){
 
 router.get('/graphs', function(req, res, next){
 	res.render('graphs', {al : answerlist, num: numbers});
-})
+});
+
+router.get('/topiclist', function(req, res, next){
+	res.render('topiclist', {clList : clList});
+});
 
 module.exports = router;
 

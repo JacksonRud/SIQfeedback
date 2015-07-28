@@ -22,14 +22,14 @@ function makeGraph(ns){
 		.data(ns);
 	var newRects = rects.enter();
 	newRects.append('rect')
-		.attr('x', 0)
-		.attr('y', function(d, i){
+		.attr('x', function(d, i){
 			return y(d.t);
 		})
-		.attr('width',function(d, i){
+		.attr('y', 500)
+		.attr('width', 100)
+		.attr('height', function(d, i){
 			return x(d.num);
 		})
-		.attr('height', 100)
 		.attr('fill', 'pink')
 		.attr('stroke', 'white')
 		.attr('stroke-width', 3);
