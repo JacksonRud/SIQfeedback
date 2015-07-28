@@ -1,4 +1,10 @@
-svg {
+#graphDiv{
 	display: block;
-	background-color: rgba(0, 0, 50, 0.2);
+	width: 100%;
+	vertical-align: middle;
+}
+#graph {
+	display: block;
+	margin: auto;
+	background-color: rgba(0, 0, 200, 0.5);
 }

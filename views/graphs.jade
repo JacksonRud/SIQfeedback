@@ -4,9 +4,11 @@ block style
 	link(rel='stylesheet' href='/stylesheets/graphs-style.css')
 
 block content
+	p#heading Ratings for your class:
 	#graphDiv
-		svg
-	p#test hi
+		svg#graph
+			g#bars
+	button(onclick="doClick()")
 	script.
 		var str = "#{JSON.stringify(num)}".replace(/&quot;/g, "\"");
 		var numbers = JSON.parse(str);

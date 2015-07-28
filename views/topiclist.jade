@@ -5,8 +5,9 @@ block style
 
 block content
 	p#heading Choose a class to rate:
+	p#test ppp
 	mixin topic(clName)
-		div(class="listItem")
+		div(class="listItem" classname=clName)
 			p(class="listItemText")= clName
 
 	each cl in clList

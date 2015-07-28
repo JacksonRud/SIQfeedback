@@ -1,0 +1,10 @@
+extends layout
+
+block style
+	link(rel='stylesheet' href='/stylesheets/graphs-style.css')
+
+block content
+	script.
+		d = $.getJSON('/database/feedback', function(data){ return data; })
+
+
