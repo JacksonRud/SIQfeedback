@@ -4,7 +4,7 @@ var router = express.Router();
 var questionlist =  [
 	{"question": "Vibhu??", "type": "scale-faces",},
 	{"question": "Yes or no?", "type": "scale-faces",},
-	{"question": "how isnt it quite", "type": "text"}
+	{"question": "how isnt it quite", "type": "text",}
 	]
 
 var numbers = [
@@ -42,8 +42,8 @@ router.get('/topiclist', function(req, res, next){
 	res.render('topiclist', {clList : clList});
 });
 
-router.get('/test', function(req, res, next){
-	res.render('test');
+router.get('/thankyou', function(req, res, next){
+	res.render('thankyou');
 });
 
 module.exports = router;

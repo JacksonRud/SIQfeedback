@@ -4,14 +4,12 @@ block style
 	link(rel='stylesheet' href='/stylesheets/graphs-style.css')
 
 block content
-	p#heading Ratings for your class:
+	p#heading Event Ratings
 	#graphDiv
 		svg#graph
 			g#bars
-	button(onclick="doClick()")
-	script.
-		var str = "#{JSON.stringify(num)}".replace(/&quot;/g, "\"");
-		var numbers = JSON.parse(str);
+			g#ax
+			g#subtext
 	script(src='/javascripts/graphs-page.js')
 
 

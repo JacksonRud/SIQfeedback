@@ -1,0 +1,30 @@
+extends layout
+
+block style
+	link(rel='stylesheet' href='/stylesheets/topiclist-style.css')
+
+block content
+	p#ty 
+	script.
+		var pp = document.getElementById("ty");
+		pp.innerHTML = "Thank you for rating "+document.cookie.split("=")[1];
+		deleteAllCookies();
+		
+		function deleteAllCookies() {
+		var cookies = document.cookie.split(";");
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i];
+				var eqPos = cookie.indexOf("=");
+				var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+				document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+			}
+		}
+
+
+	div(class="listItem" onclick="back()")
+		p(class="listItemText") Back to homepage
+	script.
+		function back(){
+			window.location.href = "/topiclist"
+		}
+	

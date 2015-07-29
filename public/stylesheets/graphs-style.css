@@ -6,5 +6,7 @@
 #graph {
 	display: block;
 	margin: auto;
-	background-color: rgba(0, 0, 200, 0.5);
+}
+p#heading {
+	font-size : 70px;
 }

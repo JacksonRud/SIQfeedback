@@ -4,9 +4,7 @@ block style
 	link(rel='stylesheet' href='/stylesheets/form-style.css')
 
 block content
-	script(src='/javascripts/form-page.js')
-
-	p Please answer these questions:
+	p#heading
 
 	mixin heartSVG
 		svg
@@ -41,7 +39,7 @@ block content
 					input#btn1(type="radio" name= q)
 					span(class="bgcircle")
 					img#img1(class="btnimg" src="/images/btn1.svg")
-				
+			
 	mixin scale-stars(q)
 		div(class="scale")
 			p= q
@@ -99,9 +97,9 @@ block content
 		div(class="text")
 			p= q
 			#textdiv
-				input#myText(type='text', value='')
+				input#myText(type='text', value='' name=q)
 
-	each index in ql  
+	each index in ql
 		if index.type == "scale-faces"
 			+scale-faces(index.question)
 		if index.type == "scale-stars"
@@ -112,7 +110,11 @@ block content
 			+text(index.question)
 
 	#submitBtnDiv
-		img#vibhu(src="images/vbb.png" class="vibhu")
+		img#vibhu(src="images/vbb.png" class="vibhu" onclick="reply()")
+	script.
+		var str = "#{JSON.stringify(ql)}".replace(/&quot;/g, "\"");				
+		var questions = JSON.parse(str);        
+	script(src="javascripts/indexPretty.js")
 
 
 

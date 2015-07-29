@@ -1,12 +1,12 @@
 $('.listItem').on( "touchstart", function(event){
 	$(this).css("background", "rgba(0, 0, 200, 0.5)");
-	document.cookie = $(this).attr("classname");
+	document.cookie = "classname="+$(this).attr("classname");
 	window.location.href = "/pretty"
 });
 
 $('.listItem').on( "click", function(event){
 	$(this).css("background", "rgba(0, 0, 200, 0.5)");
-	document.cookie = $(this).attr("classname");
+	document.cookie = "classname="+$(this).attr("classname");
 	window.location.href = "/pretty"
 
 });
