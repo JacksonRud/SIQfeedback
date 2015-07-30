@@ -4,8 +4,13 @@
 	vertical-align: middle;
 }
 #graph {
-	display: block;
-	margin: auto;
+	display: inline-block;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+#pie {
+	display: inline-block;
+	float:left;
 }
 p#heading {
 	font-size : 70px;

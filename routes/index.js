@@ -22,17 +22,6 @@ var clList = [
 	{name : "Laughing"}
 ]
 
-router.get('/', function(req, res, next) {
-	res.render('collectbuttondata', {ql : questionlist })
-});
-
-router.get('/welcome', function(req, res, next){
-	res.render('welcome');
-});
-
-router.get('/pretty', function(req, res, next){
-	res.render('indexPretty', { ql :questionlist});
-});
 
 router.get('/graphs', function(req, res, next){
 	res.render('graphs', {num: numbers});
@@ -45,6 +34,17 @@ router.get('/topiclist', function(req, res, next){
 router.get('/thankyou', function(req, res, next){
 	res.render('thankyou');
 });
+router.get("/setquestions", function(req, res, next){
+	res.render('setquestions');
+});
+router.post('/postForSet', function(req, res) {
+	questionlist = JSON.parse(req.body.obj);
+	res.send("ok");
+});
+router.get('/pretty', function(req, res, next){
+	res.render('indexPretty', { ql : questionlist});
+});
+
 
 module.exports = router;
 
