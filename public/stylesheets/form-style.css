@@ -11,15 +11,27 @@ input[type=text]{
 	display:block;
 	margin: 0 auto;
 	text-align: center;
+	border: 5px solid rgba(255, 255, 255, 0.2);
+	border-radius:25px;
 }
-.vibhu:hover{
-	filter: hue-rotate(85deg);
+#sub{
+	display: block;
+	margin: auto;
+	margin-top: 100px;
+	width: 500px;
+	line-height: 100px;
+	font-size: 100px;
+	font-family: "Roboto";
+	vertical-align: middle;
+	background-color:rgba(100, 100, 200, 0.5);
+	border-radius: 20px;
+	border: 5px solid rgba(100, 100, 255, 0.5);
+	color: rgba(255, 255, 255, 0.5);
 }
 #submitBtnDiv{
 	display:block;
 	width: 600px;
 	margin: 0 auto;
-	margin-top:500px;
 	text-align: center;	
 }
 input[type="radio"] {
@@ -32,10 +44,13 @@ img.btnimg {
 	height:120px; 
 	}
 .scale, .text{
-	margin-bottom:500px;
+	margin-bottom:200px;
 	display: inline-block;
 	width: 100%;
 	}
+.text{
+	margin-bottom: 50px;
+}
 span.bgcircle {
 	position:absolute;
 	top:-25px;
@@ -45,7 +60,7 @@ span.bgcircle {
 	height:170px;
 	border-radius:  50%;
 	background-color:#FFCCFF;
-	transition:background-color .5	s linear;
+	transition:background-color .5s linear;
 	}
 span.bgcircle.st {
 	top:8px;

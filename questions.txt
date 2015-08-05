@@ -1,0 +1,1 @@
+[{"question":"How much did you enjoy this class?","type":"scale","answer":""},{"question":"What is your favorite type of cheese?","type":"text","answer":""},{"question":"How much do you like this type of cheese?","type":"scale","answer":""}]

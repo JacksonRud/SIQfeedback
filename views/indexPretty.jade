@@ -4,14 +4,11 @@ block style
 	link(rel='stylesheet' href='/stylesheets/form-style.css')
 
 block content
-	script(src='/javascripts/form-page.js')
-
-	p Please answer these questions:
+	p#heading
 
 	mixin heartSVG
 		svg
 			path(d='m47.07145,1.10096c-24.6443,0 -44.67244,20.75463 -44.67244,46.29287c0,52.00231 50.59152,65.62014 85.10099,117.00522c32.61089,-51.07646 85.10097,-66.70031 85.10097,-117.00522c0,-25.53824 -20.02812,-46.29287 -44.67242,-46.29287c-17.86897,0 -33.28096,10.95597 -40.42855,26.69554c-7.14759,-15.73957 -22.52234,-26.69554 -40.42855,-26.69554l0,0z')
-
 
 	mixin scale-faces(q)
 		div(class="scale")
@@ -41,7 +38,7 @@ block content
 					input#btn1(type="radio" name= q)
 					span(class="bgcircle")
 					img#img1(class="btnimg" src="/images/btn1.svg")
-				
+			
 	mixin scale-stars(q)
 		div(class="scale")
 			p= q
@@ -99,20 +96,30 @@ block content
 		div(class="text")
 			p= q
 			#textdiv
-				input#myText(type='text', value='')
+				input#myText(type='text', value='' name=q)
 
-	each index in ql  
+	each index in ql
 		if index.type == "scale-faces"
 			+scale-faces(index.question)
-		if index.type == "scale-stars"
+		else if index.type == "scale-stars"
 			+scale-stars(index.question)
-		if index.type == "scale-hearts"
+		else if index.type == "scale-hearts"
 			+scale-hearts(index.question)
-		if index.type == "text"
+		else if index.type == "text"
 			+text(index.question)
+		else if index.type == "scale"
+			+scale-faces(index.question)
+		else if index.type == "empty"
+			p Sorry, no questions!
 
-	#submitBtnDiv
-		img#vibhu(src="images/vbb.png" class="vibhu")
+	if ql[0].type != "empty"
+		#submitBtnDiv
+			span(onclick="reply()")#sub SUBMIT
+
+	script.
+		var str = "#{JSON.stringify(ql)}".replace(/&quot;/g, "\"");				
+		var questions = JSON.parse(str);        
+	script(src="javascripts/indexPretty.js")
 
 
 

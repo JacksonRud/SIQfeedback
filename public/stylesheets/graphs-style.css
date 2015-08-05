@@ -4,7 +4,14 @@
 	vertical-align: middle;
 }
 #graph {
-	display: block;
-	margin: auto;
-	background-color: rgba(0, 0, 200, 0.5);
+	display: inline-block;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+#pie {
+	display: inline-block;
+	float:left;
+}
+p#heading {
+	font-size : 70px;
 }

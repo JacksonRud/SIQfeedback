@@ -1,0 +1,87 @@
+extends layout
+block style     
+    title Dynamically add Textbox, Radio, Button in html Form using JavaScript
+    script(language='javascript').
+        numberOfQuestions=0
+        function add(value,type, name, comment) {
+            var element = document.createElement("input");
+            element.setAttribute("type", type);
+            element.setAttribute("value", value);
+            element.setAttribute("name", name);
+            var foo = document.getElementById("fooBar");
+            foo.appendChild(document.createTextNode(comment));
+            foo.appendChild(document.createElement("br"));
+            foo.appendChild(element);
+            foo.appendChild(document.createElement("br"));
+        }   
+        function reply(){
+            var myNode = document.getElementById("fooBar");
+            while (myNode.firstChild) {
+                myNode.removeChild(myNode.firstChild);
+            }
+            var response = document.getElementById("select")
+            var value= response.value
+            generate(value);
+            numberOfQuestions=value;
+        }
+
+block content
+    h1 how many questions?
+    select(id= "select")
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+        option(value='4') 4
+        option(value='5') 5
+        option(value='6') 6
+    button(onclick='reply()') Go
+
+    span#fooBar
+
+    div
+        button#sub(onclick="submitData()") Submit
+    script. 
+        var generate = function(numberOfQuestions){
+            for (var i =0; i<numberOfQuestions ; i++ ){
+            add("question" ,"text","question" + i, "");
+            add("scale", "Radio", "button" + i, "scale");
+            add("text" + i, "Radio", "button" + i, "text");
+            }
+        }
+        var questionlist = [];
+        var getData= function(){
+            var question;
+            var firstbutton; 
+            var isLegit= true;
+            var type;
+            var string; 
+            for(var i = 0; i<numberOfQuestions; i++ ){
+                question = document.getElementsByName("question"+i)[0];
+                buttons = document.getElementsByName("button"+i);
+                if(buttons[0].checked==buttons[1].checked || question.value === "question"){
+                    isLegit=false;
+                    window.alert("no way jose");
+                    break;
+                } else if (buttons[0].checked==true){
+                    type= "scale" ;
+                } else{
+                    type = "text";
+                }
+                string = '{ "question" : "' + question.value +'" , "type": "'+ type +'" , "answer":""} ';
+                questionlist.push(JSON.parse(string));
+            }   
+        }
+        var post = function(){
+            $.ajax({
+                    type: "POST",
+                    url: "/postForSet",
+                    data: {"obj": JSON.stringify(questionlist)},
+                    success: function(){window.location.href="/topiclist";},
+                    dataType: "JSON"
+                });
+            }
+        var submitData = function(){
+            questionlist = [];
+            getData();
+            post();
+        }
