@@ -67,6 +67,10 @@ router.get('/end', function(req, res, next){
 router.get('/endgraphs', function(req, res, next){
 	res.render('endgraphs', {ql : end});
 });
+router.get('/endthankyou', function(req, res, next){
+	res.render('endthankyou', {ql : end});
+});
+
 
 
 module.exports = router;

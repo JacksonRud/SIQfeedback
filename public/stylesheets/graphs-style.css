@@ -11,6 +11,7 @@
 #pie {
 	display: inline-block;
 	float:left;
+	margin-left: 10%;
 }
 p#heading {
 	font-size : 70px;

@@ -29,23 +29,31 @@ function beginLoop(){
 	var ql = "";
 	var cl = [""];
 	var i = 0;
-	setInterval(function(){
-		$.getJSON('database/feedback' , function( data ) {
-			var items = [];
-				$.each( data, function( key, val ) {
-				    items.push(val); 
-				});
-			classAnswers = fixAllData(items);
-			cl = [];
-			for(var k in classAnswers)cl.push(k);
-			$('#heading').html("Ratings for: "+cl[i]);
-			makeGraph(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
-			makePie(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
-			textarr = createAnswerArray(cl[i], questions[2].question);
-			i = (i+1)%(cl.length);
-			pageChange(cl.length);
-		});	
-	},TIMEOUT);}
+	setTimeout(function(){
+		setIntervalAndExecute(function(){
+			$.getJSON('database/feedback' , function( data ) {
+				var items = [];
+					$.each( data, function( key, val ) {
+					    items.push(val); 
+					});
+				classAnswers = fixAllData(items);
+				cl = [];
+				for(var k in classAnswers)cl.push(k);
+				$('#heading').html("Ratings for: "+cl[i]);
+				makeGraph(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
+				makePie(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
+				textarr = createAnswerArray(cl[i], questions[2].question);
+				i = (i+1)%(cl.length);
+				pageChange(cl.length);
+			});	
+		},TIMEOUT);
+	}, 2000);
+}
+
+function setIntervalAndExecute(fn, t) {
+	fn();
+	return(setInterval(fn, t));
+}
 
 function pageChange(nClasses){
 	setTimeout( function(){

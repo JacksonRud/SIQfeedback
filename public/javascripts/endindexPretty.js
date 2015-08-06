@@ -88,7 +88,7 @@ function putDataInFormat(classname, Data){
         type: "POST",
         url: "/database/endsendfeedback",
         data: Data,
-        success: function(){window.location.href = "/thankyou";},
+        success: function(){window.location.href = "/endthankyou";},
         dataType: "JSON"
     });
 
