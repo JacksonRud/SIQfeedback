@@ -76,6 +76,10 @@ function putDataInFormat(classname, Data){
  function reply(){
      for (var i =0 ; i< questions.length; i++) {
          answertox(questions[i].question);
+         if(questions[i].answer === ""){
+            window.alert("Please finish the survey.");
+            return;
+         }
          }
 
      var Data=  putDataInFormat(document.cookie.split("=")[1],questions); 

@@ -79,10 +79,10 @@ input[type="radio"]:checked + span {
 	position:relative;
     border: 1px solid transparent;
 	}
-#radio5{
+#radio1{
 		margin-left: 7%;
 	}
-#radio1{
+#radio5{
 		margin-right: 5%;
 	}
 svg {

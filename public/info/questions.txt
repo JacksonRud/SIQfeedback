@@ -1,1 +1,1 @@
-[{"question":"How much did you like this class?","type":"scale","answer":""}]
+[{"question":"Rate this class","type":"scale","answer":""},{"question":"Rate the speaker","type":"scale","answer":""},{"question":"Comment","type":"text","answer":""}]

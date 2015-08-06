@@ -26,9 +26,9 @@
 }
 
 body{
-    background: url("/images/bg.jpg") no-repeat center center;
-    background-attachment:fixed;
-    background-size: cover;
+    background: url("/images/bg.jpg");
+    min-height:100%;
+    background-size:cover;
     }
 
 p{

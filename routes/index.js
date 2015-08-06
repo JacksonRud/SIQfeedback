@@ -19,8 +19,16 @@ var clList = [
 ];
 
 
+router.get('/', function(req, res, next){
+	res.redirect("/topiclist");
+});
+
 router.get('/graphs', function(req, res, next){
 	res.render('graphs', {ql : questionlist});
+});
+
+router.get('/comments', function(req, res, next){
+	res.render('comments', {ql : questionlist});
 });
 
 router.get('/topiclist', function(req, res, next){

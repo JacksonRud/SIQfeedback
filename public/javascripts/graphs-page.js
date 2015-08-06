@@ -3,6 +3,7 @@ $(document).ready(function(){
 });
 HEIGHT = 400;
 WIDTH = 500;
+TIMEOUT = 10000;
 
 var svgBar = d3.select('#graph')
 	.attr('height', HEIGHT)
@@ -25,7 +26,7 @@ var arc = d3.svg.arc()
 
 function beginLoop(){
 	var ql = "";
-	var cl = "";
+	var cl = [""];
 	var i = 0;
 	setInterval(function(){
 		$.getJSON('database/feedback' , function( data ) {
@@ -39,9 +40,17 @@ function beginLoop(){
 			$('#heading').html("Ratings for: "+cl[i]);
 			makeGraph(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
 			makePie(makeObj(tallyQuestion(classAnswers, cl[i],questions[0].question)));
+			textarr = createAnswerArray(cl[i], questions[2].question);
 			i = (i+1)%(cl.length);
+			pageChange(cl.length);
 		});	
-	}, 6000);}
+	},TIMEOUT);}
+
+function pageChange(nClasses){
+	setTimeout( function(){
+		window.location.href = "/comments";
+	}, TIMEOUT*(nClasses+1));
+}
 
 function makePie(ns){
 	var group = d3.select("#arcs")
@@ -254,5 +263,15 @@ function arcTween(a) {
 		return arc(i(t));
 	};
 }
-
+function createAnswerArray(className, questionName){
+    var answerArray = []; 
+    for(var i = 0; i< classAnswers[className].length; i++){ // for all the people 
+        for(var j=0; j< classAnswers[className][i].length; j++){ // look at all the questions they answered
+            if (classAnswers[className][i][j].question === questionName){ // if the question is the one we are interested in...
+                    answerArray.push(classAnswers[className][i][j].answer);
+            }
+        } 
+    }
+        return answerArray;
+}
 

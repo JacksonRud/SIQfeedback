@@ -1,0 +1,22 @@
+p#heading {
+	font-size : 70px;
+}
+#textResDiv{
+	position:absolute;
+	top: 300px;
+	width: 100%;
+	z-index:5;
+	text-align:center;
+}
+#textResP{
+	opacity:0.75;
+	transition: opacity linear .4s ;
+}
+.invis{
+	opacity:0 !important;
+}
+#textRes{
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius:25px;
+	color:rgba(255, 255, 255, 0.5);
+}
