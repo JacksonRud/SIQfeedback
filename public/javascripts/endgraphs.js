@@ -1,10 +1,9 @@
 $(document).ready(function(){
 	beginLoop();
 });
-
 HEIGHT = 400;
-WIDTH = 400;
-TIMEOUT = 10000;
+WIDTH = 500;
+TIMEOUT = 3000;
 
 var svgBar = d3.select('#graph')
 	.attr('height', HEIGHT)
@@ -30,7 +29,7 @@ function beginLoop(){
 	var cl = [""];
 	var i = 0;
 	setInterval(function(){
-		$.getJSON('database/feedback' , function( data ) {
+		$.getJSON('database/endfeedback' , function( data ) {
 			var items = [];
 				$.each( data, function( key, val ) {
 				    items.push(val); 
@@ -275,4 +274,3 @@ function createAnswerArray(className, questionName){
     }
         return answerArray;
 }
-

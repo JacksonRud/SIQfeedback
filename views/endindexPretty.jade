@@ -4,8 +4,6 @@ block style
 	link(rel='stylesheet' href='/stylesheets/form-style.css')
 
 block content
-	#logoDiv
-		img#logo(src="images/logo.png")
 	p#heading
 
 	mixin heartSVG
@@ -121,8 +119,4 @@ block content
 	script.
 		var str = "#{JSON.stringify(ql)}".replace(/&quot;/g, "\"");				
 		var questions = JSON.parse(str);        
-	script(src="javascripts/indexPretty.js")
-
-
-
-
+	script(src="javascripts/endindexPretty.js")

@@ -11,7 +11,13 @@ router.get('/feedback', function(req, res) {
         res.json(docs);
     });
 });
-
+router.get('/endfeedback', function(req, res) {
+    var db = req.db;
+    var collection = db.get('lendSIQfeedback');
+    collection.find({},{},function(e,docs){
+        res.json(docs);
+    });
+});
 
 /*
  * POST to adduser.
@@ -20,6 +26,17 @@ router.post('/sendfeedback', function(req, res) {
 
     var db = req.db;   
     var collection = db.get('SIQfeedback');
+    collection.insert(req.body, function(err, result){
+        res.send(
+            (err === null) ? { msg: '' } : { msg: err }
+        );
+    });
+});
+
+router.post('/endsendfeedback', function(req, res) {
+
+    var db = req.db;   
+    var collection = db.get('lendSIQfeedback');
     collection.insert(req.body, function(err, result){
         res.send(
             (err === null) ? { msg: '' } : { msg: err }

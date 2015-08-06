@@ -2,7 +2,7 @@ $(document).ready(function(){
 	beginLoop();
 });
 
-TIMEOUT = 10000;
+TIMEOUT = 3000;
 
 function beginLoop(){
 	var ql = "";
@@ -12,7 +12,7 @@ function beginLoop(){
 	var textarr;
 	setInterval(function(){
 		clearInterval(textDisplayInterval);
-		$.getJSON('database/feedback' , function( data ) {
+		$.getJSON('database/endfeedback' , function( data ) {
 			var items = [];
 				$.each( data, function( key, val ) {
 				    items.push(val); 
@@ -36,7 +36,7 @@ function beginLoop(){
 
 function pageChange(nClasses){
 	setTimeout( function(){
-		window.location.href = "/graphs";
+		window.location.href = "/endgraphs";
 	}, TIMEOUT*(nClasses+1));
 }
 
@@ -100,4 +100,3 @@ function createAnswerArray(className, questionName){
     }
         return answerArray;
 }
-

@@ -4,7 +4,7 @@ block style
 	link(rel='stylesheet' href='/stylesheets/graphs-style.css')
 
 block content
-	p#heading Session Ratings
+	p#heading Event Ratings
 	#graphDiv
 		svg#graph
 			g#bars
@@ -15,4 +15,4 @@ block content
 	script.
 		var str = "#{JSON.stringify(ql)}".replace(/&quot;/g, "\"");				
 		var questions = JSON.parse(str);    
-	script(src='/javascripts/graphs-page.js')
+	script(src='/javascripts/endgraphs.js')

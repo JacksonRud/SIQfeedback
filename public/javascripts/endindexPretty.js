@@ -82,15 +82,14 @@ function putDataInFormat(classname, Data){
          }
          }
 
-     var Data=  putDataInFormat(document.cookie.split("=")[1],questions); 
+     var Data=  putDataInFormat("Conference",questions); 
 
     $.ajax({
         type: "POST",
-        url: "/database/sendfeedback",
+        url: "/database/endsendfeedback",
         data: Data,
         success: function(){window.location.href = "/thankyou";},
         dataType: "JSON"
     });
 
  }
-

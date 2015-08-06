@@ -2,6 +2,11 @@ var express = require('express');
 var fs = require('fs');
 var router = express.Router();
 
+end = [{"question": "Did you enjoy the conference?", "type": "scale-faces" , "answer": "" },
+			{"question": "Will you come back again next year?", "type": "scale-faces" , "answer": "" },
+			{"question": "what would be awesome for next year?", "type": "text" , "answer": "" }];
+
+
 var questionlist = [{"type":"empty"}];
 var qString = ""
 if(fs.existsSync("public/info/questions.txt")){
@@ -32,6 +37,9 @@ router.get('/graphs', function(req, res, next){
 router.get('/comments', function(req, res, next){
 	res.render('comments', {ql : questionlist});
 });
+router.get('/endcomments', function(req, res, next){
+	res.render('endcomments', {ql : end});
+});
 
 router.get('/topiclist', function(req, res, next){
 	res.render('topiclist', {clList : clList});
@@ -52,6 +60,12 @@ router.post('/postForSet', function(req, res) {
 });
 router.get('/pretty', function(req, res, next){
 	res.render('indexPretty', { ql : questionlist});
+});
+router.get('/end', function(req, res, next){
+	res.render('endindexPretty', { ql : end});
+});
+router.get('/endgraphs', function(req, res, next){
+	res.render('endgraphs', {ql : end});
 });
 
 
