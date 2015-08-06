@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	beginLoop();
 });
+
 HEIGHT = 400;
-WIDTH = 500;
+WIDTH = 400;
 TIMEOUT = 10000;
 
 var svgBar = d3.select('#graph')

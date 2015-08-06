@@ -1,1 +1,1 @@
-[{"question":"Rate this class","type":"scale","answer":""},{"question":"Rate the speaker","type":"scale","answer":""},{"question":"Comment","type":"text","answer":""}]
+[{"question":"Would you come back next year?","type":"scale","answer":""},{"question":"Which city would you like this event?","type":"text","answer":""},{"question":"What was the best session?","type":"text","answer":""}]

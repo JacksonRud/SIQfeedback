@@ -38,3 +38,14 @@ p{
 	font-family:"Roboto";
 	text-align:center;
 }
+#logo{
+  opacity:0.75;
+  width:400px;
+}
+#logoDiv{
+  z-index:4;
+  display:inline-block;
+  margin-top:100px;
+  margin-left:30%;
+  width:10%;
+}

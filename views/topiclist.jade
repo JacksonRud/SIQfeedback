@@ -4,7 +4,9 @@ block style
 	link(rel='stylesheet' href='/stylesheets/topiclist-style.css')
 
 block content
-	p#heading Choose a class to rate:
+	#logoDiv
+		img#logo(src="images/logo.png")
+	p#heading Choose a session to rate:
 	mixin topic(clName)
 		div(class="listItem" classname=clName)
 			p(class="listItemText")= clName

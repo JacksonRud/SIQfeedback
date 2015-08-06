@@ -12,10 +12,12 @@ if(qString !== ""){
 }
 
 var clList = [
-	{name : "Code-A-Thon"},
-	{name : "Continuous Delivery"},
 	{name : "Don't Test Your Code"},
-	{name : "Clean Code Basics"}
+	{name : "Pair Programming"},
+	{name : "Common Blindspots"},
+	{name : "Clean Code Basics"},
+	{name : "CD: J2EE"},
+	{name : "CD: Node.js"},
 ];
 
 
